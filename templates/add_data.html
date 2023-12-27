@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adicionar Dados</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+</head>
+<body>
+    <div class="container justify-content-center mt-5">
+        <form method="POST" action="/add_data" enctype="multipart/form-data">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="fileInput" name="file" accept=".xml" onchange="updateFileName(this)">
+                <label class="custom-file-label" for="fileInput">Escolher SAFT da Contabilidade</label>
+            </div>
+            <button type="submit" class="btn btn-outline-dark mt-3">Adicionar</button>
+            <a href="{{ url_for('options') }}" class="btn btn-link">Voltar</a>
+
+        </form>
+        
+        <br>
+        </br>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+    
+    </div>
+    <script>
+        function updateFileName(input) {
+            var fileName = input.files[0].name;
+            var label = input.nextElementSibling;
+            label.innerHTML = fileName;
+        }
+        
+        
+    </script>
+    
+</body>
+</html>

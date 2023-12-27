@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apagar Dados</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+</head>
+<body>
+    <div class="container justify-content-center mt-5">
+        <table class="table">
+                <thead>
+                    <tr>
+                        {% for col in table.columns %}
+                            <th>{{ col }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in table.iterrows() %}
+                        <tr>
+                            {% for cell in row[1] %}
+                                <td>{{ cell|safe }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    
+            <a href="{{ url_for('options') }}" class="btn btn-link">Voltar</a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

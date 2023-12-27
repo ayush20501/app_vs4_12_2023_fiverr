@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opções</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4">
+                <a href="{{ url_for('add_data') }}" class="btn btn-outline-dark btn-lg btn-block">Adicionar Dados</a>
+                <a href="{{ url_for('delete_data') }}" class="btn btn-outline-dark btn-lg btn-block">Apagar Dados</a>
+                <a href="/dashapp/" class="btn btn-outline-dark btn-lg btn-block">Dashboard</a>
+                <a href="{{ url_for('logout') }}" class="btn btn-link">Logout</a>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
